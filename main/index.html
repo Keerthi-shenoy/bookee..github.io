@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
+    />
+    <title>Books - Google API books library</title>
+    <meta name="description" content="Find books from Google Play Books" />
+    <link rel="icon" href="favicon.ico" />
+    <meta itemprop="name" content="Books" />
+    <meta itemprop="description" content="Find books from Google Play Books" />
+    <meta itemprop="image" content="icons/icon-192x192.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Books" />
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Books" />
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="icons/icon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="icons/icon-96x96.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="icons/icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="icons/icon-192x192.png"
+    />
+    <meta property="og:image" content="icons/icon-144x144.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@liyasthomas" />
+    <meta name="twitter:creator" content="@liyasthomas" />
+    <meta name="twitter:url" content="books" />
+    <meta name="twitter:title" content="Books" />
+    <meta
+      name="twitter:description"
+      content="Find books from Google Play Books"
+    />
+    <meta name="twitter:image" content="icons/icon-144x144.png" />
+    <!-- Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:500,600,900&display=swap"
+      rel="stylesheet"
+    />
+        <!-- Scripts -->
+        <link rel="stylesheet" href="index.css" />
+        <script>
+          if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+              navigator.serviceWorker
+                .register("sw.js")
+                .then(function (registration) {
+                  console.log(
+                    "ServiceWorker registration successful with scope: ",
+                    registration.scope
+                  );
+                })
+                .catch(function (err) {
+                  console.log("ServiceWorker registration failed: ", err);
+                });
+            });
+          }
+        </script>
+      </head>
+      <body>
+        <aside>
+          <div class="logo">
+            <a href="books">
+            Bookee..
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li class="subhead">LIBRARY</li>
+                      <li class="nav trigger"><span class="icon"></span>Book lists</li>
+            </ul>
+          </nav>
+          <div class="spacer"></div>
+          <label class="theme-switch" for="checkbox" title="Night mode">
+            <input type="checkbox" id="checkbox" aria-label="Night mode" />
+            <div class="slider round"></div>
+          </label>
+        </aside>
+        <main id="main" class="main">
+            <article>
+              <section id="search" class="results">
+                <div class="flex">
+                  <input
+                    id="search-box"
+                    class="search-box"
+                    placeholder="Search books ..."
+                    aria-label="Search books"
+                  />
+                </div>
+
+                <div class="list-book search">
+                  <div class="prompt">Enter a search term</div>
+                </div>
+              </section>
+              <div id="foryou">
+                       
+            </article>
+
+
+            <div class="modal">
+              <span class="close-button">✖</span>
+              <div class="modal-content">
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                 Algorithms
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  Cloud computing
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  DBMS
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  Digital marketing
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  Mobile Development
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  PHP
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  R programming
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  Software Engineering
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  Unix and Linux
+                </h3>
+                <h3
+                  class="book-authors"
+                  onclick='updateFilter(this,"subject");toggleModal();'
+                >
+                  Web Applications
+                </h3>
+                <h3
+                class="book-authors"
+                onclick='updateFilter(this,"subject");toggleModal();'
+              >
+                Data Structure
+              </h3>
+              <h3
+              class="book-authors"
+              onclick='updateFilter(this,"subject");toggleModal();'
+            >
+              Java
+            </h3>
+            <h3
+            class="book-authors"
+            onclick='updateFilter(this,"subject");toggleModal();'
+                    >
+            Python
+          </h3>
+          <h3
+          class="book-authors"
+          onclick='updateFilter(this,"subject");toggleModal();'
+        >
+          Aritficial Intelligence
+        </h3>
+                
+              </div>
+            </div>
+          </main>
+          <script src="index.js"></script>
+        </body>
+      </html>
+    
+      <!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the footer */
+        footer {
+            text-align: center; /* Center-align the content */
+            background-color: #fff; /* Change the background color to white */
+            color: #333; /* Text color, you can adjust this color as needed */
+            padding: 10px 0; /* Add some padding for spacing */
+        }
+
+        /* Style for the copyright text */
+        footer p {
+            margin: 0; /* Remove default margin */
+            font-size: 15px; /*  font size */
+        }
+
+        /* Style for the copyright symbol */
+        footer p::before {
+            content: "\00a9"; /* Unicode copyright symbol */
+            margin-right: 5px; /*  */
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <p>Bookee App-2024 <br> </p>
+    </footer>
+</body>
+</html>
+    <!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-5px) rotate(-5deg);
+      }
+      75% {
+        transform: translateX(5px) rotate(5deg);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
